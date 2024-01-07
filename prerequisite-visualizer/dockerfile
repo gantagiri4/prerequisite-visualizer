@@ -1,0 +1,11 @@
+FROM node:latest
+
+# might need to change this WORKDIR
+WORKDIR /usr/prerequisite-visualizer
+# COPY server.js .
+COPY . .
+RUN npm install react-scripts --save 
+RUN npm install bootstrap
+RUN npm i react-search-box --save
+RUN npm install --save echarts-for-react
+ENTRYPOINT [ "npm", "start" ]
